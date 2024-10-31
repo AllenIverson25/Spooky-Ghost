@@ -15,11 +15,13 @@ body {
     padding: 0;
     box-sizing: border-box;
     background: #424f6f;
-    transition: scale  0.2s ease-in-out;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
 }
 #container:hover {
     transform: scale(2);
-}
+    box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;}
 *:after,
 *:before {
     box-sizing: inherit;
@@ -84,7 +86,9 @@ transform: scale(500px);;
     background: #252c49;
     border-radius: 50%;
 }
-
+#spooky #body #eyes:after {
+    background-color: rgb(255, 51, 0);
+}
 #spooky #body #mouth {
     background: #252c49;
     margin: 25px auto 0;
@@ -103,6 +107,7 @@ transform: scale(500px);;
     height: 10px;
 }
 
+
 #spooky #body #feet {
     position: absolute;
     display: flex;
@@ -117,7 +122,7 @@ transform: scale(500px);;
     content: ' ';
     width: 36px;
     height: 36px;
-    background: #f2fbf1;
+    background: #f1fafb;
     border-radius: 50%;
 }
 
