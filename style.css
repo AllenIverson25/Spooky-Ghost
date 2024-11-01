@@ -1,172 +1,191 @@
+/* Basic styles for the body of the page */
 body {
-    overflow: hidden;
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    background: #424f6f;
+    overflow: hidden; /* Prevents scrolling */
+    height: 100vh; /* Full viewport height */
+    width: 100vw; /* Full viewport width */
+    display: flex; /* Uses flexbox for layout */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    margin: 0; /* Removes default margin */
+    background: #424f6f; /* Sets background color */
 }
 
+/* Container for the spooky ghost */
 #container {
-    width: 400px;
-    height: 400px;
-    padding: 0;
-    box-sizing: border-box;
-    background: #424f6f;
-    -webkit-transition: all .5s;
-    -moz-transition: all .5s;
-    transition: all .5s;
+    width: 400px; /* Sets width of the container */
+    height: 400px; /* Sets height of the container */
+    padding: 0; /* No padding */
+    box-sizing: border-box; /* Includes padding and border in element's total width and height */
+    background: #424f6f; /* Matches the body background color */
+    transition: all .5s; /* Smooth transition for all properties */
 }
+
+/* Scale the container on hover */
 #container:hover {
-    transform: scale(2);
- }
+    transform: scale(2); /* Doubles the size of the container */
+}
+
+/* Ensures all elements use border-box sizing */
 *:after,
 *:before {
     box-sizing: inherit;
 }
 
+/* Styles for the spooky ghost element */
 #spooky {
-    margin: 10% auto;
-    width: 80%;
-    height: 80%;
-    animation: floaty 2s infinite;
+    margin: 10% auto; /* Centers the ghost and gives top margin */
+    width: 80%; /* Sets width of the ghost */
+    height: 80%; /* Sets height of the ghost */
+    animation: floaty 2s infinite; /* Applies floating animation */
 }
 
+/* Ghost's body styling */
 #spooky #body {
-    position: relative;
-    margin: 50px auto 0;
-    width: 180px;
-    height: 220px;
-    background: #f2fbf1;
-    border-top-left-radius: 90px;
-    border-top-right-radius: 90px;
+    position: relative; /* Positioning context for absolutely positioned children */
+    margin: 50px auto 0; /* Centers body and adds top margin */
+    width: 180px; /* Width of the ghost's body */
+    height: 220px; /* Height of the ghost's body */
+    background: #f2fbf1; /* Light color for the ghost body */
+    border-top-left-radius: 90px; /* Rounds the top-left corner */
+    border-top-right-radius: 90px; /* Rounds the top-right corner */
 }
 
+/* Creates the floating effect for the eyes */
 #spooky #body:before,
 #spooky #body:after {
-    content: '';
-    position: absolute;
-    top: 130px;
-    display: inline-block;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background: #f2fbf1;
-    animation: floaty .2s infinite;
-    
+    content: ''; /* Empty content for pseudo-elements */
+    position: absolute; /* Positions relative to the body */
+    top: 130px; /* Aligns vertically */
+    display: inline-block; /* Allows width and height */
+    width: 36px; /* Width of the floating parts */
+    height: 36px; /* Height of the floating parts */
+    border-radius: 50%; /* Makes them circular */
+    background: #f2fbf1; /* Same color as body */
+    animation: floaty .2s infinite; /* Applies floating animation */
 }
+
+/* Scaling effect on hover for the body */
 #spooky #body:hover {
-transform: scale(500px);;
+    transform: scale(500px); /* Enlarges the body significantly */
 }
+
 #spooky #body:before {
-    left: -18px;
+    left: -18px; /* Positions the first eye */
 }
 
 #spooky #body:after {
-    right: -18px;
+    right: -18px; /* Positions the second eye */
 }
 
+/* Styling for the ghost's eyes */
 #spooky #body #eyes {
-    display: flex;
-    justify-content: space-between;
-    margin: 0 auto;
-    padding: 90px 0 0;
-    width: 90px;
-    height: 20px;
+    display: flex; /* Uses flexbox for layout */
+    justify-content: space-between; /* Spaces the eyes evenly */
+    margin: 0 auto; /* Centers eyes horizontally */
+    padding: 90px 0 0; /* Top padding for position */
+    width: 90px; /* Width of the eyes container */
+    height: 20px; /* Height of the eyes container */
 }
 
+/* Styles for each eye */
 #spooky #body #eyes:before,
 #spooky #body #eyes:after {
-    content: ' ';
-    display: block;
-    width: 30px;
-    height: 30px;
-    background: #252c49;
-    border-radius: 50%;
+    content: ' '; /* Empty content for pseudo-elements */
+    display: block; /* Makes them block-level elements */
+    width: 30px; /* Width of each eye */
+    height: 30px; /* Height of each eye */
+    background: #252c49; /* Dark color for the eye */
+    border-radius: 50%; /* Makes them circular */
 }
+
+/* Changes the second eye's color */
 #spooky #body #eyes:after {
-    background-color: rgb(255, 51, 0);
+    background-color: rgb(255, 51, 0); /* Red color for the second eye */
 }
+
+/* Styling for the ghost's mouth */
 #spooky #body #mouth {
-    background: #252c49;
-    margin: 25px auto 0;
-    width: 60px;
-    height: 30px;
-    border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px;
+    background: #252c49; /* Dark color for the mouth */
+    margin: 25px auto 0; /* Centers mouth with top margin */
+    width: 60px; /* Width of the mouth */
+    height: 30px; /* Height of the mouth */
+    border-bottom-left-radius: 30px; /* Rounds the bottom-left corner */
+    border-bottom-right-radius: 30px; /* Rounds the bottom-right corner */
 }
 
+/* Additional styling for the mouth */
 #spooky #body #mouth:before {
-    content: ' ';
-    display: block;
-    background: #fff;
-    margin-left: 20px;
-    width: 10px;
-    height: 10px;
+    content: ' '; /* Empty content for pseudo-element */
+    display: block; /* Makes it block-level */
+    background: #fff; /* White dot inside the mouth */
+    margin-left: 20px; /* Space from the left */
+    width: 10px; /* Width of the dot */
+    height: 10px; /* Height of the dot */
 }
 
-
+/* Styling for the ghost's feet */
 #spooky #body #feet {
-    position: absolute;
-    display: flex;
-    bottom: -18px;
-    width: 180px;
-    height: 36px;
+    position: absolute; /* Absolute positioning */
+    display: flex; /* Uses flexbox for layout */
+    bottom: -18px; /* Positions feet at the bottom */
+    width: 180px; /* Width of the feet container */
+    height: 36px; /* Height of the feet container */
 }
 
+/* Styling for each foot */
 #spooky #body #feet > *,
 #spooky #body #feet::before,
 #spooky #body #feet::after {
-    content: ' ';
-    width: 36px;
-    height: 36px;
-    background: #f1fafb;
-    border-radius: 50%;
+    content: ' '; /* Empty content for pseudo-elements */
+    width: 36px; /* Width of each foot */
+    height: 36px; /* Height of each foot */
+    background: #f1fafb; /* Light color for the feet */
+    border-radius: 50%; /* Makes them circular */
 }
 
+/* Styling for the ghost's shadow */
 #shadow {
-    margin: -90px auto 0;
-    background: #252c49;
-    width: 180px;
-    height: 40px;
-    border-radius: 50%;
-    animation: zoomy 2s infinite;
+    margin: -90px auto 0; /* Centers shadow and positions it upwards */
+    background: #252c49; /* Dark color for the shadow */
+    width: 180px; /* Width of the shadow */
+    height: 40px; /* Height of the shadow */
+    border-radius: 50%; /* Rounds the edges */
+    animation: zoomy 2s infinite; /* Applies zooming animation */
 }
 
+/* Keyframes for the floating animation */
 @keyframes floaty {
     0%, 100% {
-        transform: translateY(0);
+        transform: translateY(0); /* Starts and ends at original position */
     }
-
     50% {
-        transform: translateY(-20px);
+        transform: translateY(-20px); /* Moves up at midpoint */
     }
 }
 
+/* Keyframes for the zooming animation */
 @keyframes zoomy {
     0%, 100% {
-        transform: scale(1);
+        transform: scale(1); /* Starts and ends at original size */
     }
-
     50% {
-        transform: scale(0.8);
+        transform: scale(0.8); /* Shrinks at midpoint */
     }
 }
 
+/* Visibility change for the boy's text on hover */
 #container:hover .boy {
-    opacity: 1;
-    visibility: visible;
+    opacity: 1; /* Fully visible */
+    visibility: visible; /* Changes visibility */
 }
 
-.boy{
-    text-align: center;
-    opacity: 0;
-    visibility: hidden;
-    margin-top: 20px;
-    font-size: 30px;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
-    border-radius: 40px;
+/* Styling for the boy's text */
+.boy {
+    text-align: center; /* Centers text */
+    opacity: 0; /* Initially hidden */
+    visibility: hidden; /* Initially hidden */
+    margin-top: 20px; /* Space above the text */
+    font-size: 30px; /* Font size for the text */
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px; /* Shadow effect */
+    border-radius: 40px; /* Rounds the corners */
 }
-
