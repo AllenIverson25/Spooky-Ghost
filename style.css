@@ -1,191 +1,224 @@
 /* Basic styles for the body of the page */
 body {
-    overflow: hidden; /* Prevents scrolling */
-    height: 100vh; /* Full viewport height */
-    width: 100vw; /* Full viewport width */
-    display: flex; /* Uses flexbox for layout */
-    justify-content: center; /* Centers content horizontally */
-    align-items: center; /* Centers content vertically */
-    margin: 0; /* Removes default margin */
-    background: #424f6f; /* Sets background color */
+    background-color: #0c0c0c; /* Deep black background */
+    color: #f0e6d2; /* Soft amber text color */
+    font-family: 'Helvetica Neue', sans-serif; /* Modern sans-serif for body text */
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
 
-/* Container for the spooky ghost */
-#container {
-    width: 400px; /* Sets width of the container */
-    height: 400px; /* Sets height of the container */
-    padding: 0; /* No padding */
-    box-sizing: border-box; /* Includes padding and border in element's total width and height */
-    background: #424f6f; /* Matches the body background color */
-    transition: all .5s; /* Smooth transition for all properties */
+/* Header and Navigation */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    padding: 1rem 0;
 }
 
-/* Scale the container on hover */
-#container:hover {
-    transform: scale(2); /* Doubles the size of the container */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
 }
 
-/* Ensures all elements use border-box sizing */
-*:after,
-*:before {
-    box-sizing: inherit;
+nav ul li {
+    margin: 0 1.5rem;
 }
 
-/* Styles for the spooky ghost element */
-#spooky {
-    margin: 10% auto; /* Centers the ghost and gives top margin */
-    width: 80%; /* Sets width of the ghost */
-    height: 80%; /* Sets height of the ghost */
-    animation: floaty 2s infinite; /* Applies floating animation */
+nav ul li a {
+    color: #f0e6d2;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s;
 }
 
-/* Ghost's body styling */
-#spooky #body {
-    position: relative; /* Positioning context for absolutely positioned children */
-    margin: 50px auto 0; /* Centers body and adds top margin */
-    width: 180px; /* Width of the ghost's body */
-    height: 220px; /* Height of the ghost's body */
-    background: #f2fbf1; /* Light color for the ghost body */
-    border-top-left-radius: 90px; /* Rounds the top-left corner */
-    border-top-right-radius: 90px; /* Rounds the top-right corner */
+nav ul li a:hover {
+    color: #ff8c00; /* Burnt orange on hover */
 }
 
-/* Creates the floating effect for the eyes */
-#spooky #body:before,
-#spooky #body:after {
-    content: ''; /* Empty content for pseudo-elements */
-    position: absolute; /* Positions relative to the body */
-    top: 130px; /* Aligns vertically */
-    display: inline-block; /* Allows width and height */
-    width: 36px; /* Width of the floating parts */
-    height: 36px; /* Height of the floating parts */
-    border-radius: 50%; /* Makes them circular */
-    background: #f2fbf1; /* Same color as body */
-    animation: floaty .2s infinite; /* Applies floating animation */
+/* Main sections */
+main {
+    padding-top: 60px; /* Offset for fixed header */
 }
 
-/* Scaling effect on hover for the body */
-#spooky #body:hover {
-    transform: scale(500px); /* Enlarges the body significantly */
+section {
+    position: relative;
+    padding: 4rem 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle separator */
 }
 
-#spooky #body:before {
-    left: -18px; /* Positions the first eye */
+.curved-divider {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
 }
 
-#spooky #body:after {
-    right: -18px; /* Positions the second eye */
+.curved-divider svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 150px;
 }
 
-/* Styling for the ghost's eyes */
-#spooky #body #eyes {
-    display: flex; /* Uses flexbox for layout */
-    justify-content: space-between; /* Spaces the eyes evenly */
-    margin: 0 auto; /* Centers eyes horizontally */
-    padding: 90px 0 0; /* Top padding for position */
-    width: 90px; /* Width of the eyes container */
-    height: 20px; /* Height of the eyes container */
+.curved-divider .shape-fill {
+    fill: #0c0c0c;
 }
 
-/* Styles for each eye */
-#spooky #body #eyes:before,
-#spooky #body #eyes:after {
-    content: ' '; /* Empty content for pseudo-elements */
-    display: block; /* Makes them block-level elements */
-    width: 30px; /* Width of each eye */
-    height: 30px; /* Height of each eye */
-    background: #252c49; /* Dark color for the eye */
-    border-radius: 50%; /* Makes them circular */
+h1, h2 {
+    font-family: 'Georgia', serif; /* Elegant serif for headings */
+    color: #ff8c00;
 }
 
-/* Changes the second eye's color */
-#spooky #body #eyes:after {
-    background-color: rgb(255, 51, 0); /* Red color for the second eye */
+/* Hero Section */
+#home {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: url('https://www.transparenttextures.com/patterns/fog.png'), linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)); /* Placeholder fog texture */
+    background-size: cover;
 }
 
-/* Styling for the ghost's mouth */
-#spooky #body #mouth {
-    background: #252c49; /* Dark color for the mouth */
-    margin: 25px auto 0; /* Centers mouth with top margin */
-    width: 60px; /* Width of the mouth */
-    height: 30px; /* Height of the mouth */
-    border-bottom-left-radius: 30px; /* Rounds the bottom-left corner */
-    border-bottom-right-radius: 30px; /* Rounds the bottom-right corner */
+/* Events Section */
+.event-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
 }
 
-/* Additional styling for the mouth */
-#spooky #body #mouth:before {
-    content: ' '; /* Empty content for pseudo-element */
-    display: block; /* Makes it block-level */
-    background: #fff; /* White dot inside the mouth */
-    margin-left: 20px; /* Space from the left */
-    width: 10px; /* Width of the dot */
-    height: 10px; /* Height of the dot */
+.event-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
 }
 
-/* Styling for the ghost's feet */
-#spooky #body #feet {
-    position: absolute; /* Absolute positioning */
-    display: flex; /* Uses flexbox for layout */
-    bottom: -18px; /* Positions feet at the bottom */
-    width: 180px; /* Width of the feet container */
-    height: 36px; /* Height of the feet container */
+.event-item img {
+    width: 100%;
+    display: block;
+    transition: transform 0.3s;
 }
 
-/* Styling for each foot */
-#spooky #body #feet > *,
-#spooky #body #feet::before,
-#spooky #body #feet::after {
-    content: ' '; /* Empty content for pseudo-elements */
-    width: 36px; /* Width of each foot */
-    height: 36px; /* Height of each foot */
-    background: #f1fafb; /* Light color for the feet */
-    border-radius: 50%; /* Makes them circular */
+.event-item:hover img {
+    transform: scale(1.1);
 }
 
-/* Styling for the ghost's shadow */
-#shadow {
-    margin: -90px auto 0; /* Centers shadow and positions it upwards */
-    background: #252c49; /* Dark color for the shadow */
-    width: 180px; /* Width of the shadow */
-    height: 40px; /* Height of the shadow */
-    border-radius: 50%; /* Rounds the edges */
-    animation: zoomy 2s infinite; /* Applies zooming animation */
+.event-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    color: #f0e6d2;
+    padding: 1rem;
+    transform: translateY(100%);
+    transition: transform 0.3s;
 }
 
-/* Keyframes for the floating animation */
-@keyframes floaty {
-    0%, 100% {
-        transform: translateY(0); /* Starts and ends at original position */
+.event-item:hover .event-info {
+    transform: translateY(0);
+}
+
+/* Tickets Section */
+.ticket-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.ticket-form input,
+.ticket-form select {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid #ff8c00;
+    color: #f0e6d2;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.ticket-form input::placeholder {
+    color: #f0e6d2;
+}
+
+/* Gallery Section */
+.masonry-grid {
+    column-count: 3;
+    column-gap: 1em;
+}
+
+.masonry-item {
+    background-color: #eee;
+    display: inline-block;
+    margin: 0 0 1em;
+    width: 100%;
+}
+
+.masonry-item img {
+    width: 100%;
+    display: block;
+}
+
+/* Contact Section */
+.map {
+    height: 400px;
+    background-color: #333; /* Placeholder for map */
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    background: #1a1a1a;
+}
+
+/* Animations and Transitions */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
     }
-    50% {
-        transform: translateY(-20px); /* Moves up at midpoint */
+    to {
+        opacity: 1;
     }
 }
 
-/* Keyframes for the zooming animation */
-@keyframes zoomy {
-    0%, 100% {
-        transform: scale(1); /* Starts and ends at original size */
-    }
-    50% {
-        transform: scale(0.8); /* Shrinks at midpoint */
-    }
+.hero h1, .hero p {
+    animation: fadeIn 2s ease-in-out;
 }
 
-/* Visibility change for the boy's text on hover */
-#container:hover .boy {
-    opacity: 1; /* Fully visible */
-    visibility: visible; /* Changes visibility */
+section {
+    transition: transform 0.3s ease-in-out;
 }
 
-/* Styling for the boy's text */
-.boy {
-    text-align: center; /* Centers text */
-    opacity: 0; /* Initially hidden */
-    visibility: hidden; /* Initially hidden */
-    margin-top: 20px; /* Space above the text */
-    font-size: 30px; /* Font size for the text */
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px; /* Shadow effect */
-    border-radius: 40px; /* Rounds the corners */
+section:hover {
+    transform: scale(1.02);
+}
+
+.appear {
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Button Styles */
+.ticket-form button {
+    background-color: #ff8c00;
+    color: #0c0c0c;
+    border: none;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.ticket-form button:hover {
+    background-color: #f0e6d2;
+    transform: translateY(-5px);
 }
