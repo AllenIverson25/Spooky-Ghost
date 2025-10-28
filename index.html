@@ -2,33 +2,126 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8"> <!-- Sets the character encoding for the document -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive design for mobile devices -->
-    <meta http-equiv="X-UA-Compatible" content="ie=edge"> <!-- Ensures compatibility with Internet Explorer -->
-    <title>Spooky Ghost</title> <!-- Title of the webpage that appears in the browser tab -->
-
-    <link rel="stylesheet" href="style.css"> <!-- Links to an external CSS stylesheet for styling -->
-    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Immersive Halloween Experience</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#tickets">Tickets</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <div id="container"> <!-- Main container for all content -->
-        <div id="spooky"> <!-- Div for the spooky ghost element -->
-            <div id="body"> <!-- Div representing the ghost's body -->
-                <div id="eyes"></div> <!-- Div for the ghost's eyes -->
-                <div id="mouth"></div> <!-- Div for the ghost's mouth -->
-                <div id="feet"> <!-- Div for the ghost's feet -->
-                    <div></div> <!-- First foot -->
-                    <div></div> <!-- Second foot -->
-                    <div></div> <!-- Third foot -->
+    <main>
+        <section id="home">
+            <div class="hero">
+                <h1>Welcome to a Spooky World</h1>
+                <p>An immersive Halloween experience like no other.</p>
+            </div>
+        </section>
+
+        <div class="curved-divider">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
+        </div>
+
+        <section id="events">
+            <h2>Events & Attractions</h2>
+            <div class="event-grid">
+                <div class="event-item">
+                    <img src="https://via.placeholder.com/300x200.png?text=Haunted+House" alt="Haunted House">
+                    <div class="event-info">
+                        <h3>Haunted House</h3>
+                        <p>Experience the thrill of our haunted house, filled with ghouls and ghosts.</p>
+                    </div>
+                </div>
+                <div class="event-item">
+                    <img src="https://via.placeholder.com/300x200.png?text=Pumpkin+Carving" alt="Pumpkin Carving">
+                    <div class="event-info">
+                        <h3>Pumpkin Carving</h3>
+                        <p>Show off your carving skills and create a masterpiece.</p>
+                    </div>
+                </div>
+                <div class="event-item">
+                    <img src="https://via.placeholder.com/300x200.png?text=Costume+Contest" alt="Costume Contest">
+                    <div class="event-info">
+                        <h3>Costume Contest</h3>
+                        <p>Dress to impress and win a prize in our annual costume contest.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div id="shadow"></div> <!-- Div for the ghost's shadow -->
-        <div class="boy">Whats good boy</div> <!-- Text element, possibly a character or message -->
-    </div>
-    
+            <div class="curved-divider">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+                </svg>
+            </div>
+        </section>
+
+        <section id="tickets">
+            <h2>Get Your Tickets</h2>
+            <form class="ticket-form">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <select name="ticket-type" required>
+                    <option value="">Select a ticket type</option>
+                    <option value="general">General Admission</option>
+                    <option value="vip">VIP Pass</option>
+                </select>
+                <button type="submit">Purchase</button>
+            </form>
+            <div class="curved-divider">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+                </svg>
+            </div>
+        </section>
+
+        <section id="gallery">
+            <h2>Gallery</h2>
+            <div class="masonry-grid">
+                <div class="masonry-item">
+                    <img src="https://via.placeholder.com/400x300.png?text=Gallery+Image+1" alt="Gallery Image 1">
+                </div>
+                <div class="masonry-item">
+                    <img src="https://via.placeholder.com/400x500.png?text=Gallery+Image+2" alt="Gallery Image 2">
+                </div>
+                <div class="masonry-item">
+                    <img src="https://via.placeholder.com/400x350.png?text=Gallery+Image+3" alt="Gallery Image 3">
+                </div>
+                <div class="masonry-item">
+                    <img src="https://via.placeholder.com/400x450.png?text=Gallery+Image+4" alt="Gallery Image 4">
+                </div>
+            </div>
+            <div class="curved-divider">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+                </svg>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact & Location</h2>
+            <div class="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2948.82674844322!2d-71.060212084545!3d42.36008297918568!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e37452a8a8b13d%3A0x8e5f3f0e0f3b4a2!2sSalem%2C%20MA!5e0!3m2!1sen!2sus!4v1635422414742!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Immersive Halloween Experience. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
